@@ -29,7 +29,6 @@ class MeVC: UIViewController {
     @IBOutlet weak var updateEmailBtn: ShadowButton!
     @IBOutlet weak var changeUsernameBtn: ShadowButton!
     @IBOutlet weak var updatePasswordBtn: ShadowButton!
-    @IBOutlet weak var upgradeAccntBtn: UIButton!
     
     @IBOutlet weak var nicknameWarningLbl: UILabel!
     @IBOutlet weak var emailWarningLbl: UILabel!
@@ -68,7 +67,6 @@ class MeVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        upgradeAccntBtn.flash()
         reloadUsername()
         
         nicknameWarningLbl.text = ""
@@ -157,21 +155,6 @@ class MeVC: UIViewController {
     }
     
     // Actions
-    @IBAction func upgradeBtnWasPressed(_ sender: Any) {
-//        guard let url = URL(string: "https://itunes.apple.com/us/app/facebook/id284882215?mt=8") else {
-//            return
-//        }
-        let upgradePopup = UIAlertController(title: "UPGRADE ACCOUNT \n(Coming Soon)", message: "A PRO version of this app will be available soon! This will include MANY amazing features such as: \n\n\u{2022} Add people to your group. \n\u{2022} Create unlimited lists for yourself with unique color coding. \n\u{2022} Edit item names and descriptions in both your own and group lists. \n\u{2022} Increased syncing speed. \n\nPlease keep an eye out for updates and have a great day! \n\nTJ Schoost", preferredStyle: .alert)
-//        let upAction = UIAlertAction(title: "UPGRADE ACCOUNT", style: .destructive) { (buttonTapped) in
-//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//        }
-        let upgradeAction = UIAlertAction(title: "OK!", style: .cancel, handler: nil)
-//        upgradePopup.addAction(upAction)
-        upgradePopup.addAction(upgradeAction)
-        present(upgradePopup, animated: true, completion: nil)
-    }
-    
-    
     
     @IBAction func logoutBtnPressed(_ sender: Any) {
         let logoutPopup = UIAlertController(title: "Sign Out?", message: "Are you sure you want to sign out?", preferredStyle: .actionSheet)
